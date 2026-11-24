@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>01 · Modélisation et dimensionnement sismique d&#39;un bâtiment auxiliaire de sûreté · Amine ZAOUI</title>
+<meta name="description" content="Chaîne complète d&#39;un calcul sismique selon le RCC-CW : modèle scripté, impédances sur 6 degrés de liberté, calage sol-structure, analyse modale-spectrale et ferraillage.">
+<link rel="canonical" href="https://zaouimedamine0-max.github.io/projets/batiment-auxiliaire-surete.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Amine ZAOUI · Portfolio">
+<meta property="og:title" content="01 · Modélisation et dimensionnement sismique d&#39;un bâtiment auxiliaire de sûreté · Amine ZAOUI">
+<meta property="og:description" content="Chaîne complète d&#39;un calcul sismique selon le RCC-CW : modèle scripté, impédances sur 6 degrés de liberté, calage sol-structure, analyse modale-spectrale et ferraillage.">
+<meta property="og:url" content="https://zaouimedamine0-max.github.io/projets/batiment-auxiliaire-surete.html">
+<meta property="og:image" content="https://zaouimedamine0-max.github.io/og/batiment-auxiliaire-surete.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/site.js" defer></script>
+</head>
+<body class="page-projet">
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="topbar">
+  <nav class="wrap topbar-in" aria-label="Navigation principale">
+    <a class="brand" href="/">Amine ZAOUI</a>
+    <div class="nav-links">
+      <a href="/#projets">Projets</a>
+      <a href="/#parcours">Parcours</a>
+      <a href="/#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+<main id="contenu">
+<section class="band">
+  <div class="wrap band-in">
+    <a class="crumb" href="/#projets">← Projets <span class="sep">·</span> Sismique et modélisation dynamique</a>
+    <div class="band-title">
+      <span class="num">01</span>
+      <div>
+        <h1>Modélisation et dimensionnement sismique d&#39;un bâtiment auxiliaire de sûreté</h1>
+        <p class="cadre">Projet académique encadré par des professionnels du domaine · ISBA-TP, projet mené en équipe <span class="sep">·</span> 04/2026 – 06/2026 · Marseille</p>
+      </div>
+    </div>
+<dl class="meta">
+  <div><dt>Ouvrage</dt><dd>Bâtiment en béton armé d&#39;un îlot nucléaire, sur radier (20 × 15 m, RDC + R+1 + R+2), voiles et dalles pleines</dd></div>
+  <div><dt>Normes</dt><dd><span class="nw">RCC-CW / ETC-C</span> · <span class="nw"><span class="nw">NF EN 1992-1-1</span></span> · <span class="nw"><span class="nw">NF EN 1998-1</span></span></dd></div>
+  <div><dt>Logiciels</dt><dd>SOFiSTiK (CADINP / Teddy) · ANSYS APDL · Python · Revit</dd></div>
+  <div><dt>Rôle dans l&#39;équipe</dt><dd>Hypothèses, modélisation, interaction sol-structure, analyse modale-spectrale, ferraillage</dd></div>
+</dl>  </div>
+</section>
+<div class="wrap">
+  <figure class="fig hero-fig">
+  <div class="fig-imgs">
+    <a class="zoom" href="/img/01-batiment-auxiliaire-surete/massif-sol-ansys-1440.webp" data-caption="Massif de sol multicouche modélisé sous ANSYS APDL pour le calcul des impédances du radier."><img src="/img/01-batiment-auxiliaire-surete/massif-sol-ansys-720.webp" srcset="/img/01-batiment-auxiliaire-surete/massif-sol-ansys-720.webp 720w, /img/01-batiment-auxiliaire-surete/massif-sol-ansys-1440.webp 1016w" sizes="(max-width: 1200px) 100vw, 1150px" width="1016" height="583" alt="Massif de sol multicouche modélisé sous ANSYS APDL pour le calcul des impédances du radier." decoding="async"></a>
+  </div>
+<figcaption>Massif de sol multicouche modélisé sous ANSYS APDL pour le calcul des impédances du radier.</figcaption></figure>
+</div>
+<div class="wrap project-body">
+  <article class="prose">
+    <section class="pblock">
+      <h2>Enjeu</h2>
+      <p>Le bâtiment doit être justifié sous séisme selon le RCC-CW. Le sol multicouche repose sur un substratum rigide : sa raideur varie avec la fréquence, et l'hypothèse d'encastrement parfait ne représente ni la souplesse ni l'amortissement du sol.</p>
+    </section>
+    <section class="pblock">
+      <h2>Démarche</h2>
+      <ul>
+<li>Nous avons établi une <strong>note d'hypothèses</strong> avant tout calcul : chaque coefficient y est rattaché à sa clause du RCC-CW ou de l'EC2.</li>
+<li>Retrait introduit comme déformation imposée, pour maîtriser la fissuration.</li>
+<li>Modèle EF scripté en CADINP sous SOFiSTiK : voiles et dalles en éléments surfaciques, appuis élastiques.</li>
+<li>Descente de charges validée par trois voies concordantes : SOFiSTiK, ANSYS et calcul manuel.</li>
+<li>Nous avons calculé les <strong>impédances dynamiques sur 6 degrés de liberté</strong> sous ANSYS APDL, sur un massif de sol multicouche étendu.</li>
+<li>Leur cohérence physique a été contrôlée : amortissement à basse fréquence, asymétrie des balancements, effet du substratum.</li>
+</ul>
+    </section>
+    <section class="steps" aria-label="Chaîne de calcul">
+      <h3 class="mini">Chaîne de calcul</h3>
+      <ol><li><span class="st-n">1</span><b>Note d&#39;hypothèses</b><span>RCC-CW · EC2</span></li><li><span class="st-n">2</span><b>Modèle scripté</b><span>SOFiSTiK · CADINP</span></li><li><span class="st-n">3</span><b>Impédances 6 DDL</b><span>ANSYS APDL · Python</span></li><li><span class="st-n">4</span><b>Calage itératif</b><span>sol-structure</span></li><li><span class="st-n">5</span><b>Modale-spectrale</b><span>CQC · Newmark</span></li><li><span class="st-n">6</span><b>Combinaisons</b><span>ELU · ACC · ELS</span></li><li><span class="st-n">7</span><b>Ferraillage</b><span>RCC-CW</span></li></ol>
+    </section>
+    <section class="pblock">
+      <h2>Difficulté</h2>
+      <p>La raideur du sol dépend de la fréquence propre du bâtiment, qui dépend elle-même de cette raideur. Nous avons donc mis en place un <strong>calage itératif</strong>, mené séparément en X, Y et Z :</p>
+<ol>
+<li>ressorts initialisés aux raideurs statiques ;</li>
+<li>analyse modale et lecture du mode prépondérant ;</li>
+<li>lecture de la raideur et de l'amortissement à cette fréquence ;</li>
+<li>mise à jour des ressorts jusqu'à convergence (<span class="nw">|Δf|</span> ≤ 0,05 Hz).</li>
+</ol>
+    </section>
+    <section class="pblock">
+      <h2>Solution / résultat</h2>
+      <ul>
+<li>Analyse spectrale menée sur le SSE du site (CQC, Newmark 100-40-40).</li>
+<li>Critères d'étage de l'<span class="nw">EN 1998-1</span> vérifiés : tous sont satisfaits.</li>
+<li>Nous avons recoupé les fréquences propres par un modèle reconstruit sous ANSYS.</li>
+<li>Nous avons déterminé le <strong>ferraillage</strong> à partir des enveloppes d'efforts, selon le RCC-CW.</li>
+<li>Dispositions traitées : jonctions de voiles, crochets sismiques à 135°, attentes voile-radier.</li>
+</ul>
+    </section>
+    <section class="pblock">
+      <h2>Perspectives</h2>
+      <ul>
+<li>Accélérogrammes artificiels compatibles avec le spectre SSE du site.</li>
+<li>Analyse dynamique temporelle, en complément de l'analyse spectrale.</li>
+<li>Spectres de plancher pour les équipements hébergés.</li>
+</ul>
+    </section>
+  </article>
+  <aside class="pside">
+    <div class="side-card">
+      <p class="kicker">Chiffres clés</p>
+<div class="kf"><span class="kf-v">1,68 m/s²</span><span class="kf-l">PGA du séisme de dimensionnement (SSE)</span></div><div class="kf"><span class="kf-v">3 à 6</span><span class="kf-l">itérations pour faire converger le calage sol-structure (6 DDL)</span></div><div class="kf"><span class="kf-v">&lt; 6 %</span><span class="kf-l">écart de fréquence entre SOFiSTiK et le modèle de recoupement ANSYS</span></div>    </div>
+    <a class="side-link" href="/poster.html"><b>Voir le poster de soutenance</b><span>Le projet en une planche, en haute définition →</span></a>
+  </aside>
+</div>
+<section class="wrap gallery-sec" aria-label="Galerie">
+  <h2 class="gal-title">Galerie</h2>
+  <div class="gallery">
+<figure class="fig ">
+  <div class="fig-imgs">
+    <a class="zoom" href="/img/01-batiment-auxiliaire-surete/ilot-nucleaire-720.webp" data-caption="Îlot nucléaire : la flèche repère le bâtiment auxiliaire modélisé."><img src="/img/01-batiment-auxiliaire-surete/ilot-nucleaire-720.webp" srcset="/img/01-batiment-auxiliaire-surete/ilot-nucleaire-720.webp 580w" sizes="(max-width: 760px) 100vw, 380px" width="580" height="569" alt="Îlot nucléaire : la flèche repère le bâtiment auxiliaire modélisé." loading="lazy" decoding="async"></a>
+  </div>
+<figcaption>Îlot nucléaire : la flèche repère le bâtiment auxiliaire modélisé.</figcaption></figure><figure class="fig ">
+  <div class="fig-imgs">
+    <a class="zoom" href="/img/01-batiment-auxiliaire-surete/modele-sofistik-1440.webp" data-caption="Modèle SOFiSTiK scripté en CADINP, maillage de 0,50 m, appuis élastiques sous radier."><img src="/img/01-batiment-auxiliaire-surete/modele-sofistik-720.webp" srcset="/img/01-batiment-auxiliaire-surete/modele-sofistik-720.webp 720w, /img/01-batiment-auxiliaire-surete/modele-sofistik-1440.webp 1103w" sizes="(max-width: 760px) 100vw, 380px" width="1103" height="843" alt="Modèle SOFiSTiK scripté en CADINP, maillage de 0,50 m, appuis élastiques sous radier." loading="lazy" decoding="async"></a>
+  </div>
+<figcaption>Modèle SOFiSTiK scripté en CADINP, maillage de 0,50 m, appuis élastiques sous radier.</figcaption></figure><figure class="fig ">
+  <div class="fig-imgs">
+    <a class="zoom" href="/img/01-batiment-auxiliaire-surete/impedances-6ddl-1440.webp" data-caption="Fonctions d&#39;impédance : raideurs et amortissements sur 6 degrés de liberté."><img src="/img/01-batiment-auxiliaire-surete/impedances-6ddl-720.webp" srcset="/img/01-batiment-auxiliaire-surete/impedances-6ddl-720.webp 720w, /img/01-batiment-auxiliaire-surete/impedances-6ddl-1440.webp 1440w" sizes="(max-width: 760px) 100vw, 380px" width="1536" height="743" alt="Fonctions d&#39;impédance : raideurs et amortissements sur 6 degrés de liberté." loading="lazy" decoding="async"></a>
+  </div>
+<figcaption>Fonctions d&#39;impédance : raideurs et amortissements sur 6 degrés de liberté.</figcaption></figure><figure class="fig  multi">
+  <div class="fig-imgs">
+    <a class="zoom" href="/img/01-batiment-auxiliaire-surete/mode-x-1440.webp" data-caption="Modes fondamentaux selon X, Y et Z après calage des impédances (SOFiSTiK)."><img src="/img/01-batiment-auxiliaire-surete/mode-x-720.webp" srcset="/img/01-batiment-auxiliaire-surete/mode-x-720.webp 720w, /img/01-batiment-auxiliaire-surete/mode-x-1440.webp 1264w" sizes="(max-width: 760px) 100vw, 380px" width="1264" height="685" alt="Modes fondamentaux selon X, Y et Z après calage des impédances (SOFiSTiK)." loading="lazy" decoding="async"></a>
+    <a class="zoom" href="/img/01-batiment-auxiliaire-surete/mode-y-1440.webp" data-caption="Modes fondamentaux selon X, Y et Z après calage des impédances (SOFiSTiK)."><img src="/img/01-batiment-auxiliaire-surete/mode-y-720.webp" srcset="/img/01-batiment-auxiliaire-surete/mode-y-720.webp 720w, /img/01-batiment-auxiliaire-surete/mode-y-1440.webp 1264w" sizes="(max-width: 760px) 100vw, 380px" width="1264" height="685" alt="Modes fondamentaux selon X, Y et Z après calage des impédances (SOFiSTiK)." loading="lazy" decoding="async"></a>
+    <a class="zoom" href="/img/01-batiment-auxiliaire-surete/mode-z-1440.webp" data-caption="Modes fondamentaux selon X, Y et Z après calage des impédances (SOFiSTiK)."><img src="/img/01-batiment-auxiliaire-surete/mode-z-720.webp" srcset="/img/01-batiment-auxiliaire-surete/mode-z-720.webp 720w, /img/01-batiment-auxiliaire-surete/mode-z-1440.webp 1167w" sizes="(max-width: 760px) 100vw, 380px" width="1167" height="719" alt="Modes fondamentaux selon X, Y et Z après calage des impédances (SOFiSTiK)." loading="lazy" decoding="async"></a>
+  </div>
+<figcaption>Modes fondamentaux selon X, Y et Z après calage des impédances (SOFiSTiK).</figcaption></figure><figure class="fig ">
+  <div class="fig-imgs">
+    <a class="zoom" href="/img/01-batiment-auxiliaire-surete/modele-ansys-recoupement-720.webp" data-caption="Modèle de recoupement reconstruit sous ANSYS APDL."><img src="/img/01-batiment-auxiliaire-surete/modele-ansys-recoupement-720.webp" srcset="/img/01-batiment-auxiliaire-surete/modele-ansys-recoupement-720.webp 623w" sizes="(max-width: 760px) 100vw, 380px" width="623" height="503" alt="Modèle de recoupement reconstruit sous ANSYS APDL." loading="lazy" decoding="async"></a>
+  </div>
+<figcaption>Modèle de recoupement reconstruit sous ANSYS APDL.</figcaption></figure><figure class="fig ">
+  <div class="fig-imgs">
+    <a class="zoom" href="/img/01-batiment-auxiliaire-surete/ferraillage-radier-voile-1440.webp" data-caption="Extrait du plan de ferraillage : jonction voile-radier."><img src="/img/01-batiment-auxiliaire-surete/ferraillage-radier-voile-720.webp" srcset="/img/01-batiment-auxiliaire-surete/ferraillage-radier-voile-720.webp 720w, /img/01-batiment-auxiliaire-surete/ferraillage-radier-voile-1440.webp 967w" sizes="(max-width: 760px) 100vw, 380px" width="967" height="497" alt="Extrait du plan de ferraillage : jonction voile-radier." loading="lazy" decoding="async"></a>
+  </div>
+<figcaption>Extrait du plan de ferraillage : jonction voile-radier.</figcaption></figure><figure class="fig ">
+  <div class="fig-imgs">
+    <a class="zoom" href="/img/01-batiment-auxiliaire-surete/spectres-sse-720.webp" data-caption="Spectres de réponse SSE horizontaux pour plusieurs taux d&#39;amortissement."><img src="/img/01-batiment-auxiliaire-surete/spectres-sse-720.webp" srcset="/img/01-batiment-auxiliaire-surete/spectres-sse-720.webp 647w" sizes="(max-width: 760px) 100vw, 380px" width="647" height="351" alt="Spectres de réponse SSE horizontaux pour plusieurs taux d&#39;amortissement." loading="lazy" decoding="async"></a>
+  </div>
+<figcaption>Spectres de réponse SSE horizontaux pour plusieurs taux d&#39;amortissement.</figcaption></figure>  </div>
+</section>
+<nav class="pnav" aria-label="Projets voisins">
+  <div class="wrap pnav-in">
+<a class="pnav-prev" href="/#projets"><span>← Retour</span><b>Tous les projets</b></a><a class="pnav-next" href="/projets/portique-pont-roulant.html"><span>Projet suivant →</span><b>02 · Portique support de pont roulant</b></a>
+  </div>
+</nav>
+</main>
+<footer class="footer" id="contact">
+  <div class="wrap footer-in">
+    <div class="footer-lead">
+      <p class="kicker">Contact</p>
+      <p class="footer-title">CDI à partir de mars 2027</p>
+      <p class="footer-sub">Calcul des structures · génie parasismique et nucléaire · Lyon</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="mailto:aminezaoui672@gmail.com">aminezaoui672@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/amine-zaoui/" rel="me noopener" target="_blank">LinkedIn</a></li>
+      <li><a href="/Amine_ZAOUI_CV.pdf" download>Télécharger le CV</a></li>
+    </ul>
+  </div>
+  <div class="wrap footer-base">
+    <span>Amine ZAOUI · Portfolio</span>
+    <a href="/Amine_ZAOUI_Portfolio_Nucleaire.pdf">Portfolio complet (PDF)</a>
+  </div>
+</footer>
+<dialog class="lightbox" id="lightbox" aria-label="Image agrandie">
+  <form method="dialog"><button class="lb-close" aria-label="Fermer">×</button></form>
+  <img alt="">
+  <p class="lb-cap"></p>
+</dialog>
+</body>
+</html>

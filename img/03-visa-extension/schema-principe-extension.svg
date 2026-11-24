@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" font-family="Inter, Arial, sans-serif">
+  <!-- Schéma de principe redessiné d'après la description du rapport VISA (sans échelle). Version agrandie pour la mise en page. -->
+  <rect width="900" height="540" fill="#FFFFFF"/>
+  <defs><pattern id="h" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="9" stroke="#8A94A0" stroke-width="2.2"/></pattern></defs>
+  <!-- niveau galerie -->
+  <line x1="10" y1="420" x2="520" y2="420" stroke="#3D4753" stroke-width="2.5"/>
+  <text x="14" y="446" font-size="17" fill="#5B6775">niveau galerie</text>
+  <!-- existant -->
+  <rect x="30" y="50" width="200" height="370" fill="#D9DDE3" stroke="#3D4753" stroke-width="2"/>
+  <g stroke="#3D4753" stroke-width="1.2">
+    <line x1="30" y1="96" x2="230" y2="96"/><line x1="30" y1="142" x2="230" y2="142"/><line x1="30" y1="188" x2="230" y2="188"/>
+    <line x1="30" y1="234" x2="230" y2="234"/><line x1="30" y1="280" x2="230" y2="280"/><line x1="30" y1="326" x2="230" y2="326"/><line x1="30" y1="372" x2="230" y2="372"/>
+  </g>
+  <text x="130" y="36" text-anchor="middle" font-size="18" font-weight="700" fill="#3D4753">EXISTANT</text>
+  <!-- charpente -->
+  <g stroke="#1F4E79" stroke-width="3.5" fill="none">
+    <line x1="260" y1="50" x2="260" y2="390"/><line x1="430" y1="50" x2="430" y2="390"/><line x1="260" y1="50" x2="430" y2="50"/>
+  </g>
+  <g stroke="#1F4E79" stroke-width="2">
+    <line x1="260" y1="96" x2="430" y2="96"/><line x1="260" y1="142" x2="430" y2="142"/><line x1="260" y1="188" x2="430" y2="188"/>
+    <line x1="260" y1="234" x2="430" y2="234"/><line x1="260" y1="280" x2="430" y2="280"/><line x1="260" y1="326" x2="430" y2="326"/><line x1="260" y1="372" x2="430" y2="372"/>
+  </g>
+  <g stroke="#1F4E79" stroke-width="1.8">
+    <line x1="430" y1="50" x2="392" y2="96"/><line x1="392" y1="50" x2="430" y2="96"/>
+    <line x1="430" y1="142" x2="392" y2="188"/><line x1="392" y1="142" x2="430" y2="188"/>
+    <line x1="430" y1="234" x2="392" y2="280"/><line x1="392" y1="234" x2="430" y2="280"/>
+    <line x1="430" y1="326" x2="392" y2="372"/><line x1="392" y1="326" x2="430" y2="372"/>
+  </g>
+  <text x="345" y="36" text-anchor="middle" font-size="18" font-weight="700" fill="#1F4E79">EXTENSION</text>
+  <!-- cage ascenseur -->
+  <rect x="300" y="60" width="62" height="330" fill="url(#h)" stroke="#3D4753" stroke-width="2"/>
+  <g fill="#F08A24"><circle cx="300" cy="96" r="6"/><circle cx="300" cy="188" r="6"/><circle cx="300" cy="280" r="6"/><circle cx="300" cy="372" r="6"/>
+    <circle cx="362" cy="142" r="6"/><circle cx="362" cy="234" r="6"/><circle cx="362" cy="326" r="6"/></g>
+  <!-- butées -->
+  <g stroke="#F08A24" stroke-width="4"><line x1="233" y1="96" x2="257" y2="96"/><line x1="233" y1="188" x2="257" y2="188"/><line x1="233" y1="280" x2="257" y2="280"/><line x1="233" y1="372" x2="257" y2="372"/></g>
+  <!-- reprise BA + micropieux -->
+  <rect x="245" y="390" width="200" height="30" fill="#BFC5CD" stroke="#3D4753" stroke-width="2"/>
+  <g stroke="#3D4753" stroke-width="4"><line x1="268" y1="420" x2="268" y2="520"/><line x1="322" y1="420" x2="322" y2="520"/><line x1="376" y1="420" x2="376" y2="520"/><line x1="428" y1="420" x2="428" y2="520"/></g>
+  <!-- hauteur -->
+  <g stroke="#5B6775" stroke-width="1.5"><line x1="470" y1="50" x2="470" y2="420"/><line x1="462" y1="50" x2="478" y2="50"/><line x1="462" y1="420" x2="478" y2="420"/></g>
+  <text x="486" y="240" font-family="JetBrains Mono, monospace" font-size="19" font-weight="700" fill="#1F4E79">≈ 37 m</text>
+  <!-- légende -->
+  <g font-size="19" fill="#0F1720">
+    <line x1="590" y1="62" x2="630" y2="62" stroke="#1F4E79" stroke-width="3.5"/><text x="644" y="68">Tour d'escalier</text><text x="644" y="90">en charpente métallique</text>
+    <line x1="592" y1="122" x2="628" y2="150" stroke="#1F4E79" stroke-width="2"/><line x1="628" y1="122" x2="592" y2="150" stroke="#1F4E79" stroke-width="2"/><text x="644" y="134">Palées de stabilité</text><text x="644" y="156">(sens longitudinal)</text>
+    <rect x="590" y="186" width="40" height="28" fill="url(#h)" stroke="#3D4753" stroke-width="1.5"/><text x="644" y="198">Cage d'ascenseur BA</text><text x="644" y="220">non autostable</text>
+    <circle cx="610" cy="258" r="7" fill="#F08A24"/><text x="644" y="264">Liaison cage / charpente</text><text x="644" y="286">à chaque niveau</text>
+    <line x1="590" y1="324" x2="630" y2="324" stroke="#F08A24" stroke-width="4"/><text x="644" y="330">Butée sur les planchers</text><text x="644" y="352">existants (sens transversal)</text>
+    <rect x="590" y="384" width="40" height="22" fill="#BFC5CD" stroke="#3D4753" stroke-width="1.5"/><text x="644" y="396">Ouvrages BA de reprise</text><text x="644" y="418">au niveau galerie</text>
+    <line x1="610" y1="448" x2="610" y2="490" stroke="#3D4753" stroke-width="4"/><text x="644" y="476">Micropieux</text>
+  </g>
+</svg>

@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>02 · Portique support de pont roulant · Amine ZAOUI</title>
+<meta name="description" content="Ossature acier-béton justifiée sous pont roulant, vent, neige et séisme, jusqu&#39;aux assemblages et aux fondations.">
+<link rel="canonical" href="https://zaouimedamine0-max.github.io/projets/portique-pont-roulant.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Amine ZAOUI · Portfolio">
+<meta property="og:title" content="02 · Portique support de pont roulant · Amine ZAOUI">
+<meta property="og:description" content="Ossature acier-béton justifiée sous pont roulant, vent, neige et séisme, jusqu&#39;aux assemblages et aux fondations.">
+<meta property="og:url" content="https://zaouimedamine0-max.github.io/projets/portique-pont-roulant.html">
+<meta property="og:image" content="https://zaouimedamine0-max.github.io/og/portique-pont-roulant.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/site.js" defer></script>
+</head>
+<body class="page-projet">
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="topbar">
+  <nav class="wrap topbar-in" aria-label="Navigation principale">
+    <a class="brand" href="/">Amine ZAOUI</a>
+    <div class="nav-links">
+      <a href="/#projets">Projets</a>
+      <a href="/#parcours">Parcours</a>
+      <a href="/#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+<main id="contenu">
+<section class="band">
+  <div class="wrap band-in">
+    <a class="crumb" href="/#projets">← Projets <span class="sep">·</span> Sismique et modélisation dynamique</a>
+    <div class="band-title">
+      <span class="num">02</span>
+      <div>
+        <h1>Portique support de pont roulant</h1>
+        <p class="cadre">Projet académique · ISBA-TP, projet mené en équipe <span class="sep">·</span> 2025/2026 · Marseille</p>
+      </div>
+    </div>
+<dl class="meta">
+  <div><dt>Ouvrage</dt><dd>Portique métallique contreventé (S235) sur voiles BA, toiture et chemins de roulement, environ 16,65 × 4,28 m, 3 niveaux</dd></div>
+  <div><dt>Normes</dt><dd><span class="nw">NF EN 1990</span> · <span class="nw">NF EN 1991</span> · <span class="nw"><span class="nw">NF EN 1993-1-1</span> / 1-8</span> · <span class="nw"><span class="nw">NF EN 1998-1</span></span> · <span class="nw"><span class="nw">NF EN 1992-1-1</span></span></dd></div>
+  <div><dt>Logiciels</dt><dd>Robot Structural Analysis · IDEA StatiCa · Advance Steel · GEO5</dd></div>
+  <div><dt>Rôle dans l&#39;équipe</dt><dd>Modélisation, actions et combinaisons, analyse modale et sismique, assemblages, fondations</dd></div>
+</dl>  </div>
+</section>
+<div class="wrap">
+  <figure class="fig hero-fig">
+  <div class="fig-imgs">
+    <a class="zoom" href="/img/02-portique-pont-roulant/modele-robot-3d-1440.webp" data-caption="Modèle Robot du portique contreventé sur voiles BA, niveaux +3,00 / +6,10 / +8,62 m."><img src="/img/02-portique-pont-roulant/modele-robot-3d-720.webp" srcset="/img/02-portique-pont-roulant/modele-robot-3d-720.webp 720w, /img/02-portique-pont-roulant/modele-robot-3d-1440.webp 763w" sizes="(max-width: 1200px) 100vw, 1150px" width="763" height="734" alt="Modèle Robot du portique contreventé sur voiles BA, niveaux +3,00 / +6,10 / +8,62 m." decoding="async"></a>
+  </div>
+<figcaption>Modèle Robot du portique contreventé sur voiles BA, niveaux +3,00 / +6,10 / +8,62 m.</figcaption></figure>
+</div>
+<div class="wrap project-body">
+  <article class="prose">
+    <section class="pblock">
+      <h2>Enjeu</h2>
+      <p>Une ossature mixte acier-béton porte un pont roulant, une toiture et des plateformes de maintenance. Elle doit être justifiée sous les charges de la grue, le vent, la neige et le séisme, jusqu'aux assemblages et aux fondations.</p>
+    </section>
+    <section class="pblock">
+      <h2>Démarche</h2>
+      <ul>
+<li>Nous avons modélisé le portique sous Robot, pieds de poteaux articulés sur les voiles.</li>
+<li>Pont roulant placé en deux positions pour obtenir l'enveloppe des effets.</li>
+<li>Pour le vent en toiture, nous avons retenu un coefficient de pression unique et défavorable.</li>
+<li><strong>Analyse modale-spectrale EC8</strong>, avec combinaison directionnelle de Newmark.</li>
+<li>Masses sismiques : grue à vide incluse, en position garage.</li>
+<li>Vérifications successives :<ul>
+<li>les barres aux ELU et ELS ;</li>
+<li>les assemblages sous IDEA StatiCa et Advance Steel ;</li>
+<li>le ferraillage des voiles et les fondations (GEO5).</li>
+</ul>
+</li>
+</ul>
+    </section>
+    <section class="pblock">
+      <h2>Difficulté</h2>
+      <p>L'analyse modale ne mobilisait qu'une partie de la masse dans chaque direction. Des <strong>modes locaux</strong>, liés au pont roulant et au bardage, captaient une part du spectre sans mettre la structure en mouvement. Ajouter des modes ne réglait rien : nous avons activé la masse résiduelle avant l'analyse spectrale.</p>
+    </section>
+    <section class="pblock">
+      <h2>Solution / résultat</h2>
+      <ul>
+<li>Masse participante : 100 % avec prise en compte de la masse résiduelle.</li>
+<li>Les voiles rigidifient la structure : la période est courte, sur le plateau du spectre.</li>
+<li>Nous avons exploité les descentes de charges sismiques pour ferrailler voiles et fondations.</li>
+</ul>
+    </section>
+  </article>
+  <aside class="pside">
+    <div class="side-card">
+      <p class="kicker">Chiffres clés</p>
+<div class="kf"><span class="kf-v">≈ 0,13 s</span><span class="kf-l">période fondamentale du portique</span></div><div class="kf"><span class="kf-v">100 %</span><span class="kf-l">masse participante avec prise en compte de la masse résiduelle</span></div>    </div>
+    <div class="side-note accent"><p class="kicker">Pour le nucléaire</p><p>Analyse modale-spectrale EC8 où une masse participante insuffisante, due à des modes locaux, a été identifiée puis corrigée avant le calcul spectral.</p></div>
+  </aside>
+</div>
+<section class="wrap gallery-sec" aria-label="Galerie">
+  <h2 class="gal-title">Galerie</h2>
+  <div class="gallery">
+<figure class="fig ">
+  <div class="fig-imgs">
+    <a class="zoom" href="/img/02-portique-pont-roulant/charges-grue-deux-positions-1440.webp" data-caption="Poids de la grue appliqué selon deux positions pour envelopper les effets."><img src="/img/02-portique-pont-roulant/charges-grue-deux-positions-720.webp" srcset="/img/02-portique-pont-roulant/charges-grue-deux-positions-720.webp 720w, /img/02-portique-pont-roulant/charges-grue-deux-positions-1440.webp 1388w" sizes="(max-width: 760px) 100vw, 380px" width="1388" height="598" alt="Poids de la grue appliqué selon deux positions pour envelopper les effets." loading="lazy" decoding="async"></a>
+  </div>
+<figcaption>Poids de la grue appliqué selon deux positions pour envelopper les effets.</figcaption></figure><figure class="fig ">
+  <div class="fig-imgs">
+    <a class="zoom" href="/img/02-portique-pont-roulant/assemblage-idea-statica-720.webp" data-caption="Assemblage poteau-poutres boulonné vérifié sous IDEA StatiCa."><img src="/img/02-portique-pont-roulant/assemblage-idea-statica-720.webp" srcset="/img/02-portique-pont-roulant/assemblage-idea-statica-720.webp 511w" sizes="(max-width: 760px) 100vw, 380px" width="511" height="601" alt="Assemblage poteau-poutres boulonné vérifié sous IDEA StatiCa." loading="lazy" decoding="async"></a>
+  </div>
+<figcaption>Assemblage poteau-poutres boulonné vérifié sous IDEA StatiCa.</figcaption></figure><figure class="fig ">
+  <div class="fig-imgs">
+    <a class="zoom" href="/img/02-portique-pont-roulant/modele-advance-steel-720.webp" data-caption="Maquette Advance Steel de la charpente et des assemblages."><img src="/img/02-portique-pont-roulant/modele-advance-steel-720.webp" srcset="/img/02-portique-pont-roulant/modele-advance-steel-720.webp 573w" sizes="(max-width: 760px) 100vw, 380px" width="573" height="460" alt="Maquette Advance Steel de la charpente et des assemblages." loading="lazy" decoding="async"></a>
+  </div>
+<figcaption>Maquette Advance Steel de la charpente et des assemblages.</figcaption></figure>  </div>
+</section>
+<nav class="pnav" aria-label="Projets voisins">
+  <div class="wrap pnav-in">
+<a class="pnav-prev" href="/projets/batiment-auxiliaire-surete.html"><span>← Projet précédent</span><b>01 · Modélisation et dimensionnement sismique d&#39;un bâtiment auxiliaire de sûreté</b></a>
+<a class="pnav-next" href="/projets/volume-ancien-mixte.html"><span>Projet suivant →</span><b>03 · Évaluation d&#39;un volume ancien mixte bois, fonte et acier</b></a>
+  </div>
+</nav>
+</main>
+<footer class="footer" id="contact">
+  <div class="wrap footer-in">
+    <div class="footer-lead">
+      <p class="kicker">Contact</p>
+      <p class="footer-title">CDI à partir de mars 2027</p>
+      <p class="footer-sub">Calcul des structures · génie parasismique et nucléaire · Lyon</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="mailto:aminezaoui672@gmail.com">aminezaoui672@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/amine-zaoui/" rel="me noopener" target="_blank">LinkedIn</a></li>
+      <li><a href="/Amine_ZAOUI_CV.pdf" download>Télécharger le CV</a></li>
+    </ul>
+  </div>
+  <div class="wrap footer-base">
+    <span>Amine ZAOUI · Portfolio</span>
+    <a href="/Amine_ZAOUI_Portfolio_Nucleaire.pdf">Portfolio complet (PDF)</a>
+  </div>
+</footer>
+<dialog class="lightbox" id="lightbox" aria-label="Image agrandie">
+  <form method="dialog"><button class="lb-close" aria-label="Fermer">×</button></form>
+  <img alt="">
+  <p class="lb-cap"></p>
+</dialog>
+</body>
+</html>
